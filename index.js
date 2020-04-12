@@ -1,11 +1,11 @@
-// Global Settings (NOT USED YET)
-// const Settings = require('./settings.json');
+// Global Settings
+const Settings = require('./settings.json');
 
 // Setup Discord
 const Discord = require('discord.js');
 const {Client, MessageAttachment, MessageEmbed} = Discord;
 const client = new Client();
-client.login(process.env.test_bot); // Test bot's token is an environment variable.
+client.login(Settings.token);
 
 // Setup lowdb
 const low = require('lowdb');
