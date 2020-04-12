@@ -19,6 +19,8 @@ client.on('messageReactionRemove', (mr, u) => {run(mr, false)});
 
 // Activate the other functions
 function run(mr, neg) {
+    if (mr.message.channel.id != Settings.channelID) return;
+    if (mr._emoji.id != Settings.emojiID) return;
     let x = Number(neg);
     if (x == 0) x = -1;
     updateDB(mr.message.id, x);
